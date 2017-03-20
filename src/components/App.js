@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from '../../assets/img/logo.svg'
 import '../css/style.css'
 import Home from './Home'
-import auth from './../utils/initAuth'
+import { auth } from './../utils/init'
 
 class App extends Component {
   constructor(props){

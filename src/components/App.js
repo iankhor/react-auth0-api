@@ -9,7 +9,7 @@ class App extends Component {
       super(props)
 
       this.state = {
-          isLoggedIn: auth.loggedIn()
+          isLoggedIn: auth.loggedIn(),
       }
   }
 
@@ -23,7 +23,8 @@ class App extends Component {
 
           <Home 
             auth={auth}
-            isLoggedIn={ this.state.isLoggedIn }  
+            isLoggedIn={ this.state.isLoggedIn }
+            token={auth.getToken()}
           />
 
         </div>

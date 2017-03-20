@@ -6,8 +6,8 @@ class LoginTransition extends Component {
         return(
             <Container className="login-transition">
                 <Row>
-                    <Col>
-                        In progress
+                    <Col> 
+                        <i className='fa fa-spinner fa-spin fa-5x color-font-aqua'></i>
                     </Col>
                 </Row>
             </Container>

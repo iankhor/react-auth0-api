@@ -1,3 +1,21 @@
+
+
+DRAFT
+=====
+
+Steps
+-----
+1. run `cp .env.example .env`
+2. populate env variables in `.env`
+3. run `npm install auth0-lock --save`
+4. add following code snippet to `index.html`
+```
+<!-- public/index.html --> 
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+
+```
+
 This boilerplate was bootstrapped with:   
 * [create-react-app](https://github.com/facebookincubator/create-react-app)   
 * [react-router v4.0.0-beta.3](https://github.com/ReactTraining/react-router/releases)

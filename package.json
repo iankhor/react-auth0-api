@@ -9,6 +9,7 @@
     "stylus": "^0.54.5"
   },
   "dependencies": {
+    "auth0-lock": "^10.13.0",
     "history": "^4.5.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",

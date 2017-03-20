@@ -45,25 +45,21 @@ class Home extends Component {
     }
 
     renderSignInUp = () => {
-        return <button onClick={ this.props.auth.login }> Sign In / Sign Up </button>
+        return <Button color="primary" onClick={ this.props.auth.login }>Sign In / Sign Up</Button>
     }
 
     renderLogOut = () => {
         return (
             <div>
-                <button onClick={ this.props.auth.logout }> Log out </button>
-                <br />
-                <button onClick={ this.pingApi }> Ping API Server </button>
-                <br />
-                <button onClick={ this._fetchProfilesNoAuth }>Fetch Profiles with No Auth</button>
-                <br />
-                <button onClick={ this._fetchProfilesWithAuth }>Fetch Profiles with Auth</button>
-                <br />
-                <button onClick={ this.resetStates }>Reset</button>
-
+                <Button color="primary" onClick={ this.props.auth.logout}>Sign out</Button>
+                <Button color="secondary" onClick={ this.pingApi }>Ping API Server</Button>
+                <ButtonGroup>
+                    <Button color="danger" onClick={this._fetchProfilesNoAuth }>Fetch Profile without Authentication</Button>
+                    <Button color="success" onClick={ this._fetchProfilesWithAuth }>Fetch Profile with Authentication</Button>
+                </ButtonGroup>
+                <Button outline color="danger" size="sm" onClick={ this.resetStates }>Reset</Button>
             </div>
         )
-
     }
 
     render(){
@@ -71,16 +67,10 @@ class Home extends Component {
         return(
             <div className="border color-aqua">
                 <ButtonGroup vertical>
-                    <Button>Sign In / Sign Up</Button>
-                    <Button>Ping API Server</Button>
-                    <ButtonGroup>
-                        <Button>Fetch Profile without Authentication</Button>
-                        <Button>Fetch Profile with Authentication</Button>
-                    </ButtonGroup>
+                    { this.props.isLoggedIn ? this.renderLogOut() : this.renderSignInUp() }
                 </ButtonGroup>
 
-                {/* this.props.isLoggedIn ? this.renderLogOut() : this.renderSignInUp() */}
-                {/* <JSONDebugger json={this.state} /> */}
+                { <JSONDebugger json={this.state} /> }
             </div> 
         )
     }

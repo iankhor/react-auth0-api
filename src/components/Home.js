@@ -3,7 +3,11 @@ import JSONDebugger from '../utils/JSONDebugger'
 import { pingApiServer, 
         fetchProfilesWithAuth, 
         fetchProfilesNoAuth } from './../utils/API'
-import { Button, ButtonGroup } from 'reactstrap'
+import { Container,
+         Row,
+         Col,
+         Button, 
+         ButtonGroup } from 'reactstrap'
 
 class Home extends Component {
     constructor(props){
@@ -51,13 +55,25 @@ class Home extends Component {
     renderLogOut = () => {
         return (
             <div>
-                <Button color="primary" onClick={ this.props.auth.logout}>Sign out</Button>
-                <Button color="secondary" onClick={ this.pingApi }>Ping API Server</Button>
-                <ButtonGroup>
-                    <Button color="danger" onClick={this._fetchProfilesNoAuth }>Fetch Profile without Authentication</Button>
-                    <Button color="success" onClick={ this._fetchProfilesWithAuth }>Fetch Profile with Authentication</Button>
-                </ButtonGroup>
-                <Button outline color="danger" size="sm" onClick={ this.resetStates }>Reset</Button>
+                <Row>
+                    <Col>
+                        <Button color="primary" onClick={ this.props.auth.logout}>Sign out</Button>
+                        <Button color="secondary" onClick={ this.pingApi }>Ping API Server</Button>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col xs="12" sm="6">
+                        <Button color="danger" onClick={this._fetchProfilesNoAuth }>Fetch Profile without Authentication</Button>
+                    </Col>
+                    <Col xs="12" sm="6">
+                        <Button color="success" onClick={ this._fetchProfilesWithAuth }>Fetch Profile with Authentication</Button>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <Button outline color="danger" size="sm" onClick={ this.resetStates }>Reset</Button>
+                    </Col>
+                </Row>
             </div>
         )
     }
@@ -65,13 +81,14 @@ class Home extends Component {
     render(){
         console.log('logged in status :', this.props.isLoggedIn)
         return(
-            <div className="border color-aqua">
-                <ButtonGroup vertical>
-                    { this.props.isLoggedIn ? this.renderLogOut() : this.renderSignInUp() }
-                </ButtonGroup>
-
+            <Container>
+                <div className="buttons">
+                    <ButtonGroup vertical>
+                        { this.props.isLoggedIn ? this.renderLogOut() : this.renderSignInUp() }
+                    </ButtonGroup>
+                </div> 
                 { <JSONDebugger json={this.state} /> }
-            </div> 
+            </Container>
         )
     }
 }

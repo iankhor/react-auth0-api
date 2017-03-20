@@ -12,7 +12,10 @@ export default class AuthService {
       theme: {
         logo: logo,
         primaryColor: '#7FDBFF'
-      } 
+      },
+      languageDictionary: {
+        title: "React + Auth0 + Rails API"
+      }
     })
     // Add callback for lock `authenticated` event
     this.lock.on('authenticated', this._doAuthentication.bind(this))

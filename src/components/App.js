@@ -18,7 +18,7 @@ class App extends Component {
         <div className="App">
           <div className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
-            <h2>Welcome to Auth0 with API example</h2>
+            <h2>Welcome to React + Auth0 + Rails API</h2>
           </div>
 
           <Home 

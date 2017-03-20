@@ -1,12 +1,11 @@
 import Auth0Lock from 'auth0-lock'
-// import { Redirect } from 'react-router'
 
 export default class AuthService {
   constructor(clientId, domain) {
     // Configure Auth0
     this.lock = new Auth0Lock(clientId, domain, {
       auth: {
-        redirectUrl: 'http://localhost:9000/',
+        redirectUrl: 'http://localhost:9000/transition',
         responseType: 'token'
       }
     })
@@ -20,7 +19,9 @@ export default class AuthService {
     // Saves the user token
     this.setToken(authResult.idToken)
     // navigate to the home route
-    // browserHistory.replace('/home')
+
+    // temp hack
+    location.replace("/");
 
   }
 
@@ -47,5 +48,8 @@ export default class AuthService {
   logout() {
     // Clear user token and profile data from local storage
     localStorage.removeItem('id_token');
+
+    // temp hack
+    location.replace("/");
   }
 }

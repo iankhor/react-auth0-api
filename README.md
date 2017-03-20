@@ -22,6 +22,11 @@ enter code snippet here
 ```
 6. 
 
+
+Things to fix
+-------------
+1. react router to transition to log out button once logged in
+
 This boilerplate was bootstrapped with:   
 * [create-react-app](https://github.com/facebookincubator/create-react-app)   
 * [react-router v4.0.0-beta.3](https://github.com/ReactTraining/react-router/releases)

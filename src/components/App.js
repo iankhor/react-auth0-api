@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from '../../assets/img/logo.svg'
 import '../css/style.css'
-import { Link } from 'react-router-dom'
+import PageOne from './PageOne'
 
 class App extends Component {
   render() {
@@ -12,12 +12,8 @@ class App extends Component {
             <h2>Welcome to a vanilla React with react-router 4</h2>
           </div>
 
-          <div className="border color-silver">
-              <Link to='/PageOne'>Go to Page One</Link>
-          </div>
+          <PageOne />
 
-           {/* Render children here*/}
-           {this.props.children} 
         </div>
     );
   }

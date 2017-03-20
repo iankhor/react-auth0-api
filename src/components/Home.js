@@ -9,42 +9,56 @@ import { Container,
          Button, 
          ButtonGroup } from 'reactstrap'
 
+import Loading from './Loading'
+
 class Home extends Component {
     constructor(props){
         super(props)
 
-        this.state = {
-                pingData: "No data from server yet",
-                profileData: "No data from server yet"
-            }
+        this.state = {  status: "Idle",
+                        pingData: "No data from server yet",
+                        profileData: "No data from server yet"
+                    }
     }
 
     resetStates = () => {
         this.setState({
+            status: "Idle",
             pingData: "No data from server yet",
             profileData: "No data from server yet"
             })
     }
 
+    renderLoading = () => {
+        switch(this.state.status) {
+            case "Fetching":
+                return <Loading />
+            default:
+                return null
+        }
+    }
+
     pingApi = () => {
+        this.setState( { status: "Fetching" })
         pingApiServer()
         .then( data => {
-            this.setState({ pingData: data} )
+            this.setState({ status: "Fetch completed", pingData: data} )
         } )
     }
  
     _fetchProfilesNoAuth = () => {
+        this.setState( { status: "Fetching" })
         fetchProfilesNoAuth()
         .then( data => {
-            this.setState({ profileData: data} )
-            
+            this.setState({ status: "Fetch completed", profileData: data} )
         })
     }
 
     _fetchProfilesWithAuth = () => {
+        this.setState( { status: "Fetching" })
         fetchProfilesWithAuth(this.props.token)
         .then( data => {
-            this.setState({ profileData: data} )
+            this.setState({ status: "Fetch completed", profileData: data} )
         })
     }
 
@@ -87,6 +101,7 @@ class Home extends Component {
                         { this.props.isLoggedIn ? this.renderLogOut() : this.renderSignInUp() }
                     </ButtonGroup>
                 </div> 
+                { this.renderLoading() }
                 { <JSONDebugger json={this.state} /> }
             </Container>
         )

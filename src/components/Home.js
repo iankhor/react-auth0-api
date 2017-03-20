@@ -93,7 +93,6 @@ class Home extends Component {
     }
 
     render(){
-        console.log('logged in status :', this.props.isLoggedIn)
         return(
             <Container>
                 <div className="buttons">

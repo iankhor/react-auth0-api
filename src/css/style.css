@@ -41,6 +41,10 @@ h1 {
 .App-intro {
   font-size: large;
 }
+.login-transition {
+  text-align: center;
+  padding-top: 50vh;
+}
 .debugger {
   text-align: left;
 }

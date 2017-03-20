@@ -20,7 +20,7 @@ Steps
 ```
 enter code snippet here
 ```
-6. 
+6. set auth0 dashboard - allowable callbacks
 
 
 Things to fix

@@ -3,7 +3,7 @@ import React from 'react'
 //Routes
 import NotFound from './NotFound'
 import App from './../App';
-import Transition from './../Transition';
+import LoginTransition from './../LoginTransition';
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
@@ -12,7 +12,7 @@ const Routes = (props) => {
     <BrowserRouter>
       <Switch>
         <Route path="/" exact component={App} />  
-        <Route path="/transition" exact component={Transition} />  
+        <Route path="/auth" exact component={LoginTransition} />  
         <Route component={NotFound} />  
       </Switch>
     </BrowserRouter>

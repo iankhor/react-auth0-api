@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Container, Row, Col } from 'reactstrap'
+import Loading from './Loading'
 
 class LoginTransition extends Component {
     render(){
@@ -7,7 +8,7 @@ class LoginTransition extends Component {
             <Container className="login-transition">
                 <Row>
                     <Col> 
-                        <i className='fa fa-spinner fa-spin fa-5x color-font-aqua'></i>
+                        <Loading />
                     </Col>
                 </Row>
             </Container>

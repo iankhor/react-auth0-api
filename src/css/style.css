@@ -37,6 +37,9 @@ h1 {
 .App-intro {
   font-size: large;
 }
+.debugger {
+  text-align: left;
+}
 @-webkit-keyframes App-logo-spin {
   from {
     -webkit-transform: rotate(0deg);

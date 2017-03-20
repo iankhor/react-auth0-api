@@ -3,8 +3,7 @@ import JSONDebugger from '../utils/JSONDebugger'
 import { pingApiServer, 
         fetchProfilesWithAuth, 
         fetchProfilesNoAuth } from './../utils/API'
-import { Jumbotron, Button } from 'reactstrap';
-
+import { Button, ButtonGroup } from 'reactstrap'
 
 class Home extends Component {
     constructor(props){
@@ -71,8 +70,17 @@ class Home extends Component {
         console.log('logged in status :', this.props.isLoggedIn)
         return(
             <div className="border color-aqua">
-                { this.props.isLoggedIn ? this.renderLogOut() : this.renderSignInUp() }
-                <JSONDebugger json={this.state} />
+                <ButtonGroup vertical>
+                    <Button>Sign In / Sign Up</Button>
+                    <Button>Ping API Server</Button>
+                    <ButtonGroup>
+                        <Button>Fetch Profile without Authentication</Button>
+                        <Button>Fetch Profile with Authentication</Button>
+                    </ButtonGroup>
+                </ButtonGroup>
+
+                {/* this.props.isLoggedIn ? this.renderLogOut() : this.renderSignInUp() */}
+                {/* <JSONDebugger json={this.state} /> */}
             </div> 
         )
     }

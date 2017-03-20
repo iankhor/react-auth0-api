@@ -1,4 +1,5 @@
 import Auth0Lock from 'auth0-lock'
+import logo from './../../assets/img/logo.svg'
 
 export default class AuthService {
   constructor(clientId, domain) {
@@ -7,7 +8,11 @@ export default class AuthService {
       auth: {
         redirectUrl: 'http://localhost:9000/transition',
         responseType: 'token'
-      }
+      },
+      theme: {
+        logo: logo,
+        primaryColor: '#7FDBFF'
+      } 
     })
     // Add callback for lock `authenticated` event
     this.lock.on('authenticated', this._doAuthentication.bind(this))

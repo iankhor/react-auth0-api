@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import JSONDebugger from '../utils/JSONDebugger'
+import auth from './../utils/initAuth'
 
 // example JSON data
 const exampleJSONData = {
@@ -11,7 +12,7 @@ const exampleJSONData = {
 class PageOne extends Component {
 
     handleClick = () => {
-        alert('hello')
+        auth.login()
     }
 
     render(){

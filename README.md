@@ -16,6 +16,12 @@ Steps
 
 ```
 
+5. create file `AuthService.js` in `src/utils` with the following code snippet
+```
+enter code snippet here
+```
+6. 
+
 This boilerplate was bootstrapped with:   
 * [create-react-app](https://github.com/facebookincubator/create-react-app)   
 * [react-router v4.0.0-beta.3](https://github.com/ReactTraining/react-router/releases)

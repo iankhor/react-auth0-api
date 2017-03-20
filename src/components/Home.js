@@ -3,6 +3,7 @@ import JSONDebugger from '../utils/JSONDebugger'
 import { pingApiServer, 
         fetchProfilesWithAuth, 
         fetchProfilesNoAuth } from './../utils/API'
+import { Jumbotron, Button } from 'reactstrap';
 
 
 class Home extends Component {
@@ -59,7 +60,8 @@ class Home extends Component {
                 <br />
                 <button onClick={ this._fetchProfilesWithAuth }>Fetch Profiles with Auth</button>
                 <br />
-                <button onClick={ this.resetStates }> Clear states </button>
+                <button onClick={ this.resetStates }>Reset</button>
+
             </div>
         )
 

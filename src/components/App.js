@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import logo from '../../assets/img/logo.svg'
 import '../css/style.css'
 import Home from './Home'
@@ -28,8 +28,8 @@ class App extends Component {
           />
 
         </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
